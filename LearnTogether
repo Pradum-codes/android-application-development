@@ -1,0 +1,103 @@
+package com.example.learntogether
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.style.LineHeightStyle
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.learntogether.ui.theme.LearnTogetherTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            LearnTogetherTheme {
+                Surface (modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
+                ){
+                    TutorialImage()
+
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun TutorialInfo(Title: String, Text1: String, Text2 : String ,modifier: Modifier = Modifier) {
+
+    Column(
+        verticalArrangement = Arrangement.Center
+    ){
+        Text(
+            text = Title,
+            fontSize = 24.sp,
+            modifier = Modifier
+                .padding(16.dp)
+        )
+        Text(
+            text = Text1,
+            textAlign = TextAlign.Justify,
+            modifier = Modifier.padding(start = 16.dp, end = 16.dp)
+        )
+        Text(
+            text = Text2,
+            textAlign = TextAlign.Justify,
+            modifier = Modifier.padding(16.dp)
+        )
+    }
+}
+
+@Composable
+fun TutorialImage() {
+    val image = painterResource(id = R.drawable.bg_compose_background)
+    Column {
+        Image(
+            painter = image,
+            contentDescription = "Tutorial Background",
+            contentScale = ContentScale.FillWidth
+        )
+
+        TutorialInfo(
+            Title = stringResource(R.string.title),
+            Text1 = stringResource(R.string.text1),
+            Text2 = stringResource(R.string.text2)
+        )
+    }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    LearnTogetherTheme {
+        TutorialImage()
+        TutorialInfo(
+            Title = stringResource(R.string.title),
+            Text1 = stringResource(R.string.text1),
+            Text2 = stringResource(R.string.text2)
+        )
+    }
+}
