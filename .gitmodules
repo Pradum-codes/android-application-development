@@ -1,0 +1,3 @@
+[submodule "CSE224-CA"]
+	path = CSE224-CA
+	url = git@github.com:Pradum-codes/CSE224-CA.git
