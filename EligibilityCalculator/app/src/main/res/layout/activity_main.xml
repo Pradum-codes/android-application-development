@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--     App Title -->
+    <TextView
+        android:id="@+id/appname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="40dp"
+        android:text="Eligibility Calculator"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--     10th Marks -->
+    <TextView
+        android:id="@+id/text_10th"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="10th Marks (More Than)"
+        app:layout_constraintStart_toStartOf="@id/appname"
+        app:layout_constraintTop_toBottomOf="@id/appname" />
+
+    <RadioGroup
+        android:id="@+id/radio_10th"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/text_10th"
+        app:layout_constraintTop_toBottomOf="@id/text_10th">
+
+        <RadioButton
+            android:id="@+id/rb_10th_90"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="90%" />
+
+        <RadioButton
+            android:id="@+id/rb_10th_80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="80%" />
+
+        <RadioButton
+            android:id="@+id/rb_10th_70"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="70%" />
+
+        <RadioButton
+            android:id="@+id/rb_10th_na"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NA" />
+
+    </RadioGroup>
+
+<!--     12th Marks -->
+    <TextView
+        android:id="@+id/text_12th"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="12th Marks (More Than)"
+        app:layout_constraintStart_toStartOf="@id/radio_10th"
+        app:layout_constraintTop_toBottomOf="@id/radio_10th" />
+
+    <RadioGroup
+        android:id="@+id/radio_12th"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/text_12th"
+        app:layout_constraintTop_toBottomOf="@id/text_12th">
+
+        <RadioButton
+            android:id="@+id/rb_12th_90"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="90%" />
+
+        <RadioButton
+            android:id="@+id/rb_12th_80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="80%" />
+
+        <RadioButton
+            android:id="@+id/rb_12th_70"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="70%" />
+
+        <RadioButton
+            android:id="@+id/rb_12th_na"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NA" />
+    </RadioGroup>
+
+<!--     Current CGPA -->
+    <TextView
+        android:id="@+id/text_cgpa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Current CGPA (More Than)"
+        app:layout_constraintStart_toStartOf="@id/text_12th"
+        app:layout_constraintTop_toBottomOf="@id/radio_12th" />
+
+    <RadioGroup
+        android:id="@+id/radio_cgpa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/text_cgpa"
+        app:layout_constraintTop_toBottomOf="@id/text_cgpa">
+
+        <RadioButton
+            android:id="@+id/rb_cgpa_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9" />
+
+        <RadioButton
+            android:id="@+id/rb_cgpa_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8" />
+
+        <RadioButton
+            android:id="@+id/rb_cgpa_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7" />
+
+        <RadioButton
+            android:id="@+id/rb_cgpa_na"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NA" />
+    </RadioGroup>
+
+<!--     Course Selection -->
+    <TextView
+        android:id="@+id/text_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Select Interested Course:"
+        app:layout_constraintStart_toStartOf="@id/text_cgpa"
+        app:layout_constraintTop_toBottomOf="@id/radio_cgpa" />
+
+    <LinearLayout
+        android:id="@+id/layout_courses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="@id/text_course"
+        app:layout_constraintTop_toBottomOf="@id/text_course">
+
+        <CheckBox
+            android:id="@+id/cb_cse211"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CSE211" />
+
+        <CheckBox
+            android:id="@+id/cb_int363"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INT363" />
+
+        <CheckBox
+            android:id="@+id/cb_int108"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INT108" />
+    </LinearLayout>
+
+<!--    Buttons-->
+    <LinearLayout
+        android:id="@+id/layout_buttons"
+        android:layout_width="271dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/layout_courses"
+        app:layout_constraintTop_toBottomOf="@id/layout_courses">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        app:layout_constraintEnd_toEndOf="@+id/layout_buttons"
+        app:layout_constraintTop_toTopOf="@+id/layout_buttons" />
+
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        app:layout_constraintStart_toStartOf="@+id/layout_buttons"
+        app:layout_constraintTop_toTopOf="@+id/layout_buttons" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

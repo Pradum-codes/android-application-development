@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme for night — inherits from same parent but overrides to
+         dark-friendly colors from res/values-night/colors.xml -->
+    <style name="Base.Theme.Profile" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Dark color roles (map to res/values-night/colors.xml) -->
+        <item name="colorPrimary">@color/md_primary</item>
+        <item name="colorOnPrimary">@color/md_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_onPrimaryContainer</item>
+
+        <item name="colorSecondary">@color/md_secondary</item>
+        <item name="colorOnSecondary">@color/md_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_onSecondaryContainer</item>
+    </style>
+
+    <!-- App theme used by the application (night) -->
+    <style name="Theme.Profile" parent="Base.Theme.Profile" />
+</resources>

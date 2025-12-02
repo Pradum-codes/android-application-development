@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">profile</string>
+    <string name="name_hint">Name</string>
+    <string name="email_hint">Email</string>
+    <string name="phone_hint">Phone</string>
+    <string name="password_hint">Password</string>
+    <string name="repeat_password_hint">Repeat Password</string>
+    <string name="submit_button_text">Submit</string>
+    <string name="reset_button_text">Reset</string>
+    <string name="profile_image_description">User profile image</string>
+</resources>
