@@ -1,6 +1,7 @@
 package com.pradumcodes.switchslider
 
 import android.os.Bundle
+import android.widget.RadioButton
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Surface
@@ -27,6 +29,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -39,6 +42,7 @@ class MainActivity : ComponentActivity() {
                 Surface {
                     Column {
                         SimpleContent()
+                        SimpleCheckBox()
                     }
                 }
             }
@@ -51,7 +55,9 @@ fun SimpleContent() {
     var mode by remember { mutableStateOf(false) }
     var percent by remember { mutableStateOf(32F) }
 
-    var selectedOption by remember { mutableStateOf("Study") }
+    val options = listOf("Male", "Female", "Other")
+    var selectedOption by remember { mutableStateOf(options[0]) }
+
     Column(
         modifier = Modifier.padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
@@ -96,33 +102,60 @@ fun SimpleContent() {
             horizontalArrangement = Arrangement.SpaceEvenly,
             modifier = Modifier.fillMaxWidth(),
         ){
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
-            ){
-                RadioButton(
-                    selected = (selectedOption == "Study"),
-                    onClick = {selectedOption = "Study"}
-                )
-                Text("Study")
-            }
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
-            ){
-                RadioButton(
-                    selected = (selectedOption == "Sleep"),
-                    onClick = {selectedOption = "Sleep"}
-                )
-                Text("Sleep")
+            options.forEach { option ->
+                Row (
+                    verticalAlignment = Alignment.CenterVertically
+                ){
+                    RadioButton(
+                        selected = (option == selectedOption),
+                        onClick = { selectedOption = option}
+                    )
+                    Text(text = option, modifier = Modifier.padding(start = 8.dp))
+                }
             }
         }
 
     }
 }
 
+@Composable
+fun SimpleCheckBox(){
+    val simpleCheckbox = listOf("Apple", "Grapes", "Banana")
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        simpleCheckbox.forEach { option ->
+            ClickableLabelCheckbox(option)
+        }
+    }
+}
+
+@Composable
+fun ClickableLabelCheckbox(text : String){
+    var checked by remember { mutableStateOf(false) }
+
+    Row(
+        verticalAlignment = Alignment.CenterVertically
+    ){
+        Checkbox(
+            checked = checked,
+            onCheckedChange = {checked=it}
+        )
+        Text(text = text)
+    }
+}
+
+@Composable
+fun MultipleCheckBox(){
+        
+}
+
 @Preview(showBackground = true)
 @Composable
 fun PreviewSimple() {
-    SimpleContent()
+    Column {
+        SimpleContent()
+        SimpleCheckBox()
+    }
 }
