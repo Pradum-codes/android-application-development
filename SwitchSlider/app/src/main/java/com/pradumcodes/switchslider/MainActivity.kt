@@ -41,8 +41,9 @@ class MainActivity : ComponentActivity() {
             MaterialTheme {
                 Surface {
                     Column {
-                        SimpleContent()
-                        SimpleCheckBox()
+//                        SimpleContent()
+//                        SimpleCheckBox()
+                        Form()
                     }
                 }
             }
