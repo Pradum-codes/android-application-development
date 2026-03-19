@@ -6,11 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.*
 import androidx.compose.ui.tooling.preview.Preview
-import com.pradumcodes.list.experiments.TechStack
-import com.pradumcodes.list.spinner.Spinner
-import com.pradumcodes.list.views.Course
-import com.pradumcodes.list.views.Courses
+import com.pradumcodes.list.campusfeedbackapp.CampusFeedbackApp
+import com.pradumcodes.list.progressbar.ProgressBarScreen
 import com.pradumcodes.list.views.ListApp
+import com.pradumcodes.list.views.SplashApp
 
 // ── Palette ──────────────────────────────────────────────────────────────────
 
@@ -22,9 +21,13 @@ class MainActivity : ComponentActivity() {
         setContent {
 //            ListApp()
 //            Spinner()
-            TechStack()
+//            TechStack()
 //            Courses()
 //            Spinner()
+//            ProgressBarScreen()
+//            MenuApp()
+//            SplashApp()
+            CampusFeedbackApp()
         }
     }
 }
